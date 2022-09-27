@@ -34,7 +34,7 @@ senha: string="";
         if(data['result']['nivel']=='admin' || data['result']['nivel']=='gerente'){
           this.router.navigate(['usuarios']);
         }else{
-          this.router.navigate(['folder']);
+          this.router.navigate(['folder/:id']);
         }
         const toast = await this.toastCtrl.create({
           message: "Login efetuado com sucesso",
