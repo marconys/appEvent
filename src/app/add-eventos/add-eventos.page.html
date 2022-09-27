@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button>
+          <ion-menu-button></ion-menu-button>
+          <ion-back-button></ion-back-button>
+      </ion-button>
+    </ion-buttons>
+    <ion-title *ngIf="!id"> Novo Evento</ion-title>
+    <ion-title *ngIf="id">Editar Evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="light">
+<!-- Campo Nome -->
+<ion-item>
+  <ion-label position="floating">Nome</ion-label>
+  <ion-input type="text" [(ngModel)]="nome"></ion-input>
+</ion-item>
+<!-- Campo Usuário -->
+<ion-item>
+  <ion-label position="floating">data</ion-label>
+  <ion-input type="date" [(ngModel)]="data"></ion-input>
+</ion-item>
+<!-- Campo Senha -->
+<ion-item>
+  <ion-label position="floating">capacidade</ion-label>
+  <ion-input type="number" [(ngModel)]="capacidade"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">usuarios_id</ion-label>
+  <ion-input type="text" [(ngModel)]="usuarios_id"></ion-input>
+</ion-item>
+
+
+<ion-button *ngIf="!id" color="success" expand="block" (click)="cadastrar()">
+  Adicionar
+</ion-button>
+<ion-button *ngIf="id" color="primary" expand="block" (click)="editar()">
+  Atualizar
+</ion-button>
+</ion-content>
