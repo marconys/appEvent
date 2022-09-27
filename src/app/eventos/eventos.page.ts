@@ -57,8 +57,8 @@ export class EventosPage implements OnInit {
       });
     });
   }//fim do metodo carregar
-  editar(id, nome, data, capacidade, usuarios_id) {
-    this.router.navigate(['add-eventos/' + id + '/' + nome + '/' + data + '/' + capacidade + '/' + usuarios_id]);
+  editar(id, nome, data, capacidade, usuario_id) {
+    this.router.navigate(['add-eventos/' + id + '/' + nome + '/' + data + '/' + capacidade + '/' + usuario_id]);
   }
   mostrar(id, nome, data, capacidade) {
     this.router.navigate(['mostrar-eventos/' + id + '/' + nome + '/' + data + '/' + capacidade]);
