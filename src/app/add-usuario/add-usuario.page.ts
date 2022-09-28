@@ -30,8 +30,9 @@ export class AddUsuarioPage implements OnInit {
     });
   }
   cadastrar() {
-    return new Promise(res => {
+    return new Promise(res =>{
       let dados = {
+
         requisicao: 'add',
         nome: this.nome,
         usuario: this.usuario,
@@ -40,7 +41,7 @@ export class AddUsuarioPage implements OnInit {
         avatar:'semFoto.png'
       }
       //console.log(dados);
-      this.service.dadosApi(dados, "api_usuario.php").subscribe(data => {
+      this.service.dadosApi(dados, "api_usuario.php").subscribe(data=> {
         if (data['success']) {
           this.router.navigate(['usuarios']);
           this.id = null; this.nome = ""; this.usuario = ""; this.senha = ""; this.nivel = "";
@@ -57,6 +58,7 @@ export class AddUsuarioPage implements OnInit {
         usuario: this.usuario,
         senha: this.senha,
         nivel: this.nivel,
+        avatar: 'semfoto.png',
         id: this.id
       };
       this.service.dadosApi(dados, "api_usuario.php").subscribe(data => {

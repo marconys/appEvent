@@ -57,6 +57,7 @@ export class EventosPage implements OnInit {
       });
     });
   }//fim do metodo carregar
+ 
   editar(id, nome, data_evento, capacidade, usuarios_id) {
     this.router.navigate(['add-eventos/' + id + '/' + nome + '/' + data_evento + '/' + capacidade  + '/' + usuarios_id]);
   }
