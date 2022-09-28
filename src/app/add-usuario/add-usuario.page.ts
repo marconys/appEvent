@@ -36,7 +36,8 @@ export class AddUsuarioPage implements OnInit {
         nome: this.nome,
         usuario: this.usuario,
         senha: this.senha,
-        nivel: this.nivel
+        nivel: this.nivel,
+        avatar:'semFoto.png'
       }
       //console.log(dados);
       this.service.dadosApi(dados, "api_usuario.php").subscribe(data => {

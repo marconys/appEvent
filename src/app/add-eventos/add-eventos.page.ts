@@ -10,7 +10,7 @@ import { PostService } from 'src/services/post.service';
 export class AddEventosPage implements OnInit {
   id: number;
   nome:string ="";
-  data:string  ="";
+  data_evento:string  ="";
   capacidade:string  ="";
   usuarios_id:number = null;
   constructor(private service: PostService ,
@@ -22,17 +22,17 @@ export class AddEventosPage implements OnInit {
     this.actRoute.params.subscribe((dadosdarota:any)=>{
       this.id = dadosdarota.id;
       this.nome = dadosdarota.nome;
-      this.data = dadosdarota.data;
+      this.data_evento = dadosdarota.data;
       this.capacidade = dadosdarota.capacidade;
       this.usuarios_id = dadosdarota.usuarios_id;
     });
   }
   cadastrar(){
-    return new Promise(res =>{
+    return new Promise(ret =>{
      let dados = {
        requisicao:'addevent',
        nome:this.nome,
-       data:this.data,
+       data_evento:this.data_evento,
        ativo:1,
        capacidade:this.capacidade,
        usuarios_id:this.usuarios_id
@@ -42,7 +42,7 @@ export class AddEventosPage implements OnInit {
       console.log(data);
        if(data['success']){
         this.router.navigate(['eventos']);
-         this.id=null;this.nome="";this.data="";this.capacidade="";this.usuarios_id=null;
+         this.id=null;this.nome="";this.data_evento="";this.capacidade="";this.usuarios_id=null;
        }
      });
     });
@@ -52,7 +52,7 @@ export class AddEventosPage implements OnInit {
       let dados = {
         requisicao:'editarevent',
         nome: this.nome,
-        data:this.data,
+        data_evento:this.data_evento,
         capacidade:this.capacidade,
         usuarios_id:this.usuarios_id,
         id:this.id

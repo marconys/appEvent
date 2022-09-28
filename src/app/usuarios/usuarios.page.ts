@@ -48,7 +48,7 @@ export class UsuariosPage implements OnInit {
             this.usuarios.push(usuario[0]);
           }
         }
-        console.log(data['result'][0][0].id);
+        //console.log(data['result'][0][0].id);
 
       });
     });

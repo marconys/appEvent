@@ -49,7 +49,7 @@ export class EventosPage implements OnInit {
           this.ionViewWillEnter();
         } else {
           for (let eventos of data['result']) {
-            this.eventos.push(eventos);
+            this.eventos.push(eventos[0]);
           }
         }
         console.log(data['result'][0]);
@@ -57,11 +57,11 @@ export class EventosPage implements OnInit {
       });
     });
   }//fim do metodo carregar
-  editar(id, nome, data, capacidade, usuarios_id) {
-    this.router.navigate(['add-eventos/' + id + '/' + nome + '/' + data + '/' + capacidade + '/' + usuarios_id]);
+  editar(id, nome, data_evento, capacidade, usuarios_id) {
+    this.router.navigate(['add-eventos/' + id + '/' + nome + '/' + data_evento + '/' + capacidade  + '/' + usuarios_id]);
   }
-  mostrar(id, nome, data, capacidade) {
-    this.router.navigate(['mostrar-eventos/' + id + '/' + nome + '/' + data + '/' + capacidade]);
+  mostrar(id, nome, data_evento, capacidade) {
+    this.router.navigate(['mostrar-eventos/' + id + '/' + nome + '/' + data_evento + '/' + capacidade]);
   }
   ativar(id, ativo) {
     if (ativo == '1') {
@@ -88,9 +88,9 @@ export class EventosPage implements OnInit {
     };
 
   }
-  async alertaexclusao(id, usuario) {
+  async alertaexclusao(id, nome) {
     const alert = await this.alertCtr.create({
-      header: 'Confirmação de Exclusão do Evento ' + usuario,
+      header: 'Confirmação de Exclusão do Evento ' + nome,
       buttons: [{
         text: 'Cancelar', role: 'Cancel', cssClass: 'light',
         handler: () => {
