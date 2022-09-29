@@ -12,12 +12,34 @@
 
 
 
-<ion-content class="ion-padding">
-  <ion-card class="ion-padding">
-    <ion-card-title>{{nome}}</ion-card-title>
-    <ion-card-subtitle>{{usuario}}</ion-card-subtitle>
-    <ion-card-content>
-    {{nivel}}
-    </ion-card-content>
-  </ion-card>
-</ion-content>
+<ion-card class="ion-padding">
+
+   
+
+  <ion-card-title>{{nome}}</ion-card-title>
+
+  <ion-card-subtitle>{{usuario}}</ion-card-subtitle>
+
+  <ion-card-content>
+
+    <img src="https://avatars.githubusercontent.com/u/90052315?v=4" >
+
+    <br>
+
+  {{nivel}}
+
+ 
+
+  </ion-card-content>
+
+  <ion-button color="danger">
+
+    <input type="file" class="upload" [(ngModel)]=avatar />
+
+  </ion-button>
+
+</ion-card>
+
+<ion-button color="primary" expand="block" (click)="gravaavatar()">Gravar Avatar</ion-button>
+
+tem menu de contexto

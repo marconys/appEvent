@@ -9,6 +9,8 @@ import { PostService } from 'src/services/post.service';
   styleUrls: ['./usuarios.page.scss'],
 })
 export class UsuariosPage implements OnInit {
+
+
   nome: string = "";
   limite: number = 10;
   inicial: number = 0;

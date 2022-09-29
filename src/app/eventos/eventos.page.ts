@@ -58,11 +58,11 @@ export class EventosPage implements OnInit {
     });
   }//fim do metodo carregar
  
-  editar(id, nome, data_evento, capacidade, usuarios_id) {
-    this.router.navigate(['add-eventos/' + id + '/' + nome + '/' + data_evento + '/' + capacidade  + '/' + usuarios_id]);
+  editar(id, nome, data_evento, capacidade, usuarios_id, imagem) {
+    this.router.navigate(['add-eventos/' + id + '/' + nome + '/' + data_evento + '/' + capacidade  + '/' + usuarios_id + '/' + imagem]);
   }
-  mostrar(id, nome, data_evento, capacidade) {
-    this.router.navigate(['mostrar-eventos/' + id + '/' + nome + '/' + data_evento + '/' + capacidade]);
+  mostrar(id, nome, data_evento, capacidade, imagem) {
+    this.router.navigate(['mostrar-eventos/' + id + '/' + nome + '/' + data_evento + '/' + capacidade + '/' + imagem]);
   }
   ativar(id, ativo) {
     if (ativo == '1') {

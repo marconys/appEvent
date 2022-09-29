@@ -24,4 +24,8 @@ nivel:string=''
     });
   }
 
+  gravaavatar(){
+    
+  }
+
 }
