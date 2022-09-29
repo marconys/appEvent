@@ -17,7 +17,14 @@
     <ion-card-title>{{nome}}</ion-card-title>
     <ion-card-subtitle>{{data}}</ion-card-subtitle>
     <ion-card-content>
+      <img src="../../assets/img/festa1.jpg" >
+      <br>
     {{capacidade}}
+
     </ion-card-content>
+    <ion-button color="danger">
+      <input type="file" class="upload" [(ngModel)]=imagem />
+    </ion-button>
   </ion-card>
+  <ion-button color="primary" expand="block" (click)="gravarImagem()">Gravar Imagem</ion-button>
 </ion-content>

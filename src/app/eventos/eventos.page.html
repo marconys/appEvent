@@ -42,10 +42,19 @@
     </ion-item-options>
     <!-- <ion-item><ion-label *ngIf="even.ativo==1" color="tertiary">{{even}}</ion-label></ion-item> -->
     <ion-item *ngIf="even.ativo==0"
-      ><ion-label color="danger">{{even.nome}}</ion-label></ion-item
+      >
+      <ion-avatar slot="start">
+        <img src="../../assets/img/festa1.jpg" />
+      </ion-avatar>
+      <ion-label color="danger">{{even.nome}}</ion-label></ion-item
     >
     <ion-item *ngIf="even.ativo==1"
-      ><ion-label color="success">{{even.nome}}</ion-label></ion-item
+      >
+      <ion-avatar slot="start">
+        <img src="../../assets/img/festa1.jpg" />
+      </ion-avatar>
+      
+      <ion-label color="success">{{even.nome}}</ion-label></ion-item
     >
     <ion-item-options side="end">
       <ion-item-option

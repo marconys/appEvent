@@ -26,6 +26,7 @@ nivel:string=''
 
   gravaavatar(){
     
+
   }
 
 }

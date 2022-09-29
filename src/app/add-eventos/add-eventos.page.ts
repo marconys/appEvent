@@ -13,7 +13,6 @@ export class AddEventosPage implements OnInit {
   data_evento:string  ="";
   capacidade:string  ="";
   usuarios_id:number = null;
-  imagem: string = "";
   constructor(private service: PostService ,
     private router: Router,
     private actRoute:ActivatedRoute
@@ -26,7 +25,6 @@ export class AddEventosPage implements OnInit {
       this.data_evento = dadosdarota.data;
       this.capacidade = dadosdarota.capacidade;
       this.usuarios_id = dadosdarota.usuarios_id;
-      this.imagem = dadosdarota.imagem;
     });
   }
   cadastrar(){
@@ -38,14 +36,14 @@ export class AddEventosPage implements OnInit {
        ativo:1,
        capacidade:this.capacidade,
        usuarios_id:this.usuarios_id,
-       imagem:this.imagem
+       imagem:'semImagem.png'
      }
      //console.log(dados);
      this.service.dadosApi(dados, "api_evento.php").subscribe(data=>{
       console.log(data);
        if(data['success']){
         this.router.navigate(['eventos']);
-         this.id=null;this.nome="";this.data_evento="";this.capacidade="";this.usuarios_id=null;this.imagem="";
+         this.id=null;this.nome="";this.data_evento="";this.capacidade="";this.usuarios_id=null;
        }
      });
     });
@@ -58,7 +56,7 @@ export class AddEventosPage implements OnInit {
         data_evento:this.data_evento,
         capacidade:this.capacidade,
         usuarios_id:this.usuarios_id,
-        imagem:this.imagem,
+        imagem:'semImagem.png',
         id:this.id
       };
       this.service.dadosApi(dados,"api_evento.php").subscribe(data=>{

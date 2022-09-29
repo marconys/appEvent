@@ -14,7 +14,7 @@ export class MostrarEventosPage implements OnInit {
     constructor(
      private actRoute: ActivatedRoute
     ) { }
-  
+
     ngOnInit() {
       this.actRoute.params.subscribe((veionarota:any)=>{
         this.id = veionarota.id;
@@ -22,6 +22,10 @@ export class MostrarEventosPage implements OnInit {
         this.data = veionarota.data;
         this.capacidade = veionarota.capacidade;
       });
+    }
+
+    gravarImagem(){
+      
     }
 
 }
