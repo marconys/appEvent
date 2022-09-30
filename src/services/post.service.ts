@@ -5,6 +5,9 @@ import 'rxjs/add/operator/map';
   providedIn: 'root'
 })
 export class PostService {
+  connectApi(dados: { requisicao: string; id_usuario: number; limit: number; start: number; }, arg1: string) {
+    throw new Error('Method not implemented.');
+  }
   server: string = "http://localhost/api/"
   constructor(private http: HttpClient) { }
   dadosApi(dados:any,nomeApi: string){

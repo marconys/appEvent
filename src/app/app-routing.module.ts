@@ -46,7 +46,12 @@ const routes: Routes = [
   {
     path: 'add-eventos/:id/:nome/:data/:capacidade/:usuarios_id',
     loadChildren: () => import('./add-eventos/add-eventos.module').then( m => m.AddEventosPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   }
+
 ];
 
 @NgModule({
